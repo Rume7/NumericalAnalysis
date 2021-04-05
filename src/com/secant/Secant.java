@@ -71,7 +71,8 @@ public class Secant {
 			iterations++;
 		}
 		
-		System.out.println("The root of the equation is " + Math.round(x*100000)/100000.0);
+		System.out.println("The root of the equation is " +
+					Math.round(x*100000)/100000.0);		// Answer is rounded to 5 decimal places.
 	}
 
 }
