@@ -2,6 +2,11 @@ package com.secant;
 
 import java.util.*;
 
+/**
+ * Secant method of determining the roots of a polynomial. 
+ * @author Rhume
+ * @date  April 5, 2021
+ */
 public class Secant {
 
 	private static Scanner input = new Scanner(System.in);
@@ -51,7 +56,7 @@ public class Secant {
 		System.out.print("Enter the end of the interval: ");
 		xn = input.nextDouble();
 
-		System.out.print("Enter the precision of the interval (e.g 0.0000001): ");
+		System.out.print("Enter the precision of the interval (e.g 0.000001): ");
 		precision = input.nextDouble();
 
 		if (function(xn1) * function(xn) > 0.0) {
@@ -72,7 +77,7 @@ public class Secant {
 		}
 		
 		System.out.println("The root of the equation is " +
-					Math.round(x*100000)/100000.0);		// Answer is rounded to 5 decimal places.
+					Math.round(x*1000000)/1000000.0);		// Answer is rounded to 6 decimal places.
 	}
 
 }
