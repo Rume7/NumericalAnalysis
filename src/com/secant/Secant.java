@@ -84,5 +84,4 @@ public class Secant {
 					Math.round(x*1000000)/1000000.0);		// Answer is rounded to 6 decimal places.
 		System.out.println("Time used is " + timeUsed + " milliseconds.");
 	}
-
 }
