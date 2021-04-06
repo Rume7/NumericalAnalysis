@@ -1,12 +1,12 @@
-package com.secant;
-
-import java.util.*;
-
 /**
  * Secant method of determining the roots of a polynomial. 
  * @author Rhume
  * @date  April 5, 2021
  */
+package com.secant;
+
+import java.util.*;
+
 public class Secant {
 
 	private static Scanner input = new Scanner(System.in);
@@ -17,7 +17,7 @@ public class Secant {
 	 * exist, enter 0.
 	 */
 	private static void inputFunction() {
-		System.out.print("Enter the order of the function: ");
+		System.out.print("Enter the order of the polynomial: ");
 		int order = input.nextInt();
 
 		System.out.print("Enter the coefficient of terms of the function: ");
@@ -59,6 +59,8 @@ public class Secant {
 		System.out.print("Enter the precision of the interval (e.g 0.000001): ");
 		precision = input.nextDouble();
 
+		long startTime = System.currentTimeMillis();
+		
 		if (function(xn1) * function(xn) > 0.0) {
 			System.out.println("Functions result have same sign value ...");
 			//return;
@@ -76,8 +78,11 @@ public class Secant {
 			iterations++;
 		}
 		
+		long stopTime = System.currentTimeMillis();
+		long timeUsed = (stopTime - startTime);
 		System.out.println("The root of the equation is " +
 					Math.round(x*1000000)/1000000.0);		// Answer is rounded to 6 decimal places.
+		System.out.println("Time used is " + timeUsed + " milliseconds.");
 	}
 
 }
