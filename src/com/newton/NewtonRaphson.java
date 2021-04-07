@@ -87,9 +87,8 @@ public class NewtonRaphson {
 		
 		long startTime = System.currentTimeMillis();
 		solution.newtonRaphson(initialValue);
-		long stopTime = System.currentTimeMillis();
 		
-		long timeToRun = (stopTime - startTime )/1000000;
+		long timeToRun = System.currentTimeMillis() - startTime;
 		System.out.println("Time used is " + timeToRun + " milliseconds.");
 		
 	}
