@@ -11,7 +11,7 @@ public class NewtonRaphson {
 	private static Scanner input = new Scanner(System.in);
 	private List<Double> polynomialCoefficients = new ArrayList<>();	
 	
-	private static double epsilon = 0.0001;
+	private static double epsilon = 0.00001;
 	
 	/**
 	 * Enter the order and coefficients of the function. If coefficient doesn't
@@ -70,9 +70,11 @@ public class NewtonRaphson {
 		while (Math.abs(h) >= epsilon ) {
 			x = x - h;
 			h = function(polynomialCoefficients, x)/function(getCoefficientsOfFunctionDerivative(polynomialCoefficients), x);
+			System.out.println("dx: " + h + " x: " + x);
+			break;
 		}
 		
-		System.out.println("The value of the root is: " + Math.round(x * 100000)/100000);
+		System.out.println("The value of the root is: " + Math.round(x * 1000.0)/1000.0);
 	}
 	
 	public static void main(String[] args) {
@@ -82,6 +84,13 @@ public class NewtonRaphson {
 		
 		System.out.print("Enter your initial guess: ");
 		double initialValue = input.nextDouble();
+		
+		long startTime = System.currentTimeMillis();
 		solution.newtonRaphson(initialValue);
+		long stopTime = System.currentTimeMillis();
+		
+		long timeToRun = (stopTime - startTime )/1000000;
+		System.out.println("Time used is " + timeToRun + " milliseconds.");
+		
 	}
 }
